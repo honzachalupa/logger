@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "86217363-19d1-4b63-a8b2-6cac62e08628",
+    "colName": "Users",
+    "created": "2023-05-14T14:43:47.034Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "b9dee472-1bb1-446e-a868-b5a0ae438766",
+    "colName": "Places",
+    "created": "2023-05-14T14:44:15.925Z",
+    "sortNum": 20000,
+    "folders": []
+  },
+  {
+    "_id": "90b28bbb-5c6a-4b7c-8e1f-85847105423b",
+    "colName": "GPT",
+    "created": "2023-05-18T09:10:01.791Z",
+    "sortNum": 30000,
+    "folders": []
+  }
+]

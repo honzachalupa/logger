@@ -1,0 +1,38 @@
+{
+    "name": "logger",
+    "version": "0.0.0",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "turbo run build",
+        "build-ci": "turbo run build --filter=admin",
+        "dev": "turbo run dev",
+        "lint": "turbo run lint",
+        "release": "turbo run release",
+        "release-ci": "turbo run release-ci",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "@honzachalupa/admin": "^1.1.0",
+        "@honzachalupa/design-system": "^2.0.5",
+        "encoding": "^0.1.13",
+        "moment": "^2.29.4"
+    },
+    "devDependencies": {
+        "eslint": "^8.37.0",
+        "eslint-config-next": "^13.2.4",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-turbo": "^1.8.8",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.7",
+        "pretty-quick": "^3.1.3",
+        "turbo": "^1.9.6"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "packageManager": "yarn@1.22.19"
+}

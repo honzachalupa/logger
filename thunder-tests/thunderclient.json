@@ -1,0 +1,49 @@
+[
+  {
+    "_id": "bc6f74bc-1f8e-4eda-a86e-43fe2c6eb075",
+    "colId": "86217363-19d1-4b63-a8b2-6cac62e08628",
+    "containerId": "",
+    "name": "Get users",
+    "url": "{{ENV_URL}}/api/admin/users",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-05-14T14:43:58.458Z",
+    "modified": "2023-05-14T14:44:07.646Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "9dd2880f-f2cc-452c-be91-1f3f05455964",
+    "colId": "b9dee472-1bb1-446e-a868-b5a0ae438766",
+    "containerId": "",
+    "name": "Get places",
+    "url": "{{ENV_URL}}/api/travel-app/places",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-05-14T14:44:25.954Z",
+    "modified": "2023-05-14T14:44:29.375Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "db2d87ad-6aa2-4d8e-a6c3-ba3346bfe0df",
+    "colId": "90b28bbb-5c6a-4b7c-8e1f-85847105423b",
+    "containerId": "",
+    "name": "Send prompt",
+    "url": "{{ENV_URL}}/api/openai/gpt",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-05-18T09:10:13.117Z",
+    "modified": "2023-05-19T19:38:05.045Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"message\": {\n    \"role\": \"user\",\n    \"content\": \"test\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

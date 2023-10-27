@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "d5efb447-4ea1-42f7-ab2c-4c0f65b91142",
+    "name": "LOCAL",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-05-14T14:42:51.559Z",
+    "modified": "2023-05-14T14:42:51.559Z",
+    "data": [
+      {
+        "name": "ENV_URL",
+        "value": "http://localhost:4000"
+      }
+    ]
+  },
+  {
+    "_id": "a26a68d9-7ee5-436c-bb6e-7ad65a1f4117",
+    "name": "PROD",
+    "default": false,
+    "sortNum": 20000,
+    "created": "2023-05-14T14:42:55.145Z",
+    "modified": "2023-05-14T14:42:55.145Z",
+    "data": [
+      {
+        "name": "ENV_URL",
+        "value": "https://admin.janchalupa.dev"
+      }
+    ]
+  }
+]
