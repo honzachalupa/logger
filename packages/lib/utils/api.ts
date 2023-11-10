@@ -11,7 +11,7 @@ export const callAPI = (
     },
     controller?: AbortController
 ) => {
-    const url = new URL(process.env.NEXT_PUBLIC_ADMIN_API_URL + path);
+    const url = new URL(process.env["NEXT_PUBLIC_ADMIN_API_URL"] + path);
 
     if (data?.params) {
         Object.entries(data.params).forEach(([key, value]) => {

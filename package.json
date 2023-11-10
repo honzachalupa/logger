@@ -16,10 +16,7 @@
         "prepare": "husky install"
     },
     "dependencies": {
-        "@honzachalupa/admin": "^1.1.0",
-        "@honzachalupa/design-system": "^2.0.5",
-        "encoding": "^0.1.13",
-        "moment": "^2.29.4"
+        "encoding": "^0.1.13"
     },
     "devDependencies": {
         "eslint": "^8.37.0",
