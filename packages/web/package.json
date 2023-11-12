@@ -8,7 +8,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@honzachalupa/admin": "^1.2.1",
+        "@honzachalupa/admin": "^1.2.2",
         "@honzachalupa/design-system": "^2.0.7",
         "@vercel/analytics": "^1.0.1",
         "admin": "*",

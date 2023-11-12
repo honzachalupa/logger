@@ -346,10 +346,10 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
-"@honzachalupa/admin@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@honzachalupa/admin/-/admin-1.2.1.tgz#bb63ba8c326c6d0adb811f82a3d62198c2ba7daf"
-  integrity sha512-A0B4/aa3NDavMRyM9ph1l/gI3Yg1rP5SoVC2a4u4E64+SHlTfq1fPkJrWnr0UMpqArVmZMZI0/ODtPjlFED/EQ==
+"@honzachalupa/admin@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@honzachalupa/admin/-/admin-1.2.2.tgz#de58c78e5ab4774b5c969a1fc3912a25a128cb8e"
+  integrity sha512-Phih/6vvIEddU8S7ej+4oQQ3iPtlJv0um01aLvtYlBepiXF4n99v/O4E6WNKcH3cyu2HJJqz4opU4qQoXFl3ng==
   dependencies:
     "@honzachalupa/design-system" "^2.0.5"
     "@supabase/supabase-js" "^2.21.0"
