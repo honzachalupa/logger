@@ -1,6 +1,3 @@
 module.exports = {
-    experimental: {
-        appDir: true,
-    },
-    transpilePackages: ["@honzachalupa/admin"],
+    transpilePackages: ["@honzachalupa/admin", "@honzachalupa/design-system"],
 };

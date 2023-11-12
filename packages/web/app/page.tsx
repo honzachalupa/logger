@@ -1,5 +1,5 @@
-import { IndexPage } from "../pages/Index";
+import { LogsList } from "./_components/LogsList";
 
 export default async function Index() {
-    return <IndexPage />;
+    return <LogsList />;
 }

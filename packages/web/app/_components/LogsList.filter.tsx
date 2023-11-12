@@ -1,7 +1,7 @@
 import { Select } from "@honzachalupa/design-system";
 import { LogLevel, LogLevels } from "@honzachalupa/logger";
 import { useEffect, useState } from "react";
-import config from "../../../config";
+import config from "../../config";
 
 export interface Filter {
     level: LogLevel[];
