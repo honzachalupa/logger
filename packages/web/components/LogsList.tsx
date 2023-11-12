@@ -4,9 +4,10 @@ import { Button, VirtualizedList } from "@honzachalupa/design-system";
 import { Log, LogActions, useLogger } from "@honzachalupa/logger";
 import moment from "moment";
 import { useEffect, useState } from "react";
+import config from "../config";
 
 export const LogsList: React.FC = () => {
-    const log = useLogger("logger");
+    const { log } = useLogger(config.namespaceId);
 
     const [data, setData] = useState<Log[]>([]);
 

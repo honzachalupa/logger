@@ -52,13 +52,15 @@ export const useLogger = (namespaceId: Log["namespaceId"]) => {
     };
 
     return {
-        info: (...props: [Error | string, Log["data"]]) =>
-            log(...props, "info"),
+        log: {
+            info: (...props: [Error | string, Log["data"]]) =>
+                log(...props, "info"),
 
-        warning: (...props: [Error | string, Log["data"]]) =>
-            log(...props, "warning"),
+            warning: (...props: [Error | string, Log["data"]]) =>
+                log(...props, "warning"),
 
-        error: (...props: [Error | string, Log["data"]]) =>
-            log(...props, "error"),
+            error: (...props: [Error | string, Log["data"]]) =>
+                log(...props, "error"),
+        },
     };
 };
