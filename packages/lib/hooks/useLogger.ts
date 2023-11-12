@@ -51,16 +51,20 @@ export const useLogger = (namespaceId: Log["namespaceId"]) => {
         LogActions.add(payload);
     };
 
+    const logInfo = (message: string, data?: Log["data"]) =>
+        log(message, data, "info");
+
+    const logWarning = (message: Error | string, data?: Log["data"]) =>
+        log(message, data, "warning");
+
+    const logError = (message: Error | string, data?: Log["data"]) =>
+        log(message, data, "error");
+
     return {
         log: {
-            info: (...props: [Error | string, Log["data"]]) =>
-                log(...props, "info"),
-
-            warning: (...props: [Error | string, Log["data"]]) =>
-                log(...props, "warning"),
-
-            error: (...props: [Error | string, Log["data"]]) =>
-                log(...props, "error"),
+            info: logInfo,
+            warning: logWarning,
+            error: logError,
         },
     };
 };
