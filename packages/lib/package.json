@@ -9,7 +9,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/honzachalupa/logger.git"
+        "url": "git+https://github.com/honzachalupa/logger.git"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
