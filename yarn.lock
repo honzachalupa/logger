@@ -346,12 +346,12 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
-"@honzachalupa/admin@^1.1.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@honzachalupa/admin/-/admin-1.2.0.tgz#f2d2de7420bb9e773a4be5cf753a078b88e2cdb3"
-  integrity sha512-w5JN0dn2m/2HS3SWlx65Gb5JFNcsCXZXmzMfBZ4Ad3k2jx5lM+YrrOCdeeAXNPi+uwsvF7pVDetuUFYar7FPIg==
+"@honzachalupa/admin@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@honzachalupa/admin/-/admin-1.2.1.tgz#bb63ba8c326c6d0adb811f82a3d62198c2ba7daf"
+  integrity sha512-A0B4/aa3NDavMRyM9ph1l/gI3Yg1rP5SoVC2a4u4E64+SHlTfq1fPkJrWnr0UMpqArVmZMZI0/ODtPjlFED/EQ==
   dependencies:
-    "@honzachalupa/design-system" "^1.0.21"
+    "@honzachalupa/design-system" "^2.0.5"
     "@supabase/supabase-js" "^2.21.0"
     classnames "^2.3.2"
     cors "^2.8.5"
@@ -359,26 +359,6 @@
     react "^18.2.0"
     typescript "^4.9.5"
     uuid "^9.0.0"
-
-"@honzachalupa/design-system@^1.0.21":
-  version "1.0.37"
-  resolved "https://registry.npmjs.org/@honzachalupa/design-system/-/design-system-1.0.37.tgz#228fb7d09afd5111d7db9cc7c12f060cb0bc73c8"
-  integrity sha512-j8AunM9aZNx100zWvivnKXkZnuc/VYsAwPLeRb2xMYmg1mKInR6HC+LRKpmM+zyLYUU/YGIYhoLd6L/A35R0NQ==
-  dependencies:
-    "@popperjs/core" "^2.11.7"
-    "@react-hooks-library/core" "^0.5.1"
-    classnames "^2.3.2"
-    mapbox-gl "^2.14.1"
-    react "^18.2.0"
-    react-icons "^4.8.0"
-    react-ios-pwa-prompt "^1.8.4"
-    react-map-gl "^7.0.23"
-    react-popper "^2.3.0"
-    react-select "^5.7.2"
-    react-spinners "^0.13.8"
-    react-textarea-autosize "^8.4.1"
-    typescript "^4.5.2"
-    ua-parser-js "^1.0.35"
 
 "@honzachalupa/design-system@^2.0.5":
   version "2.0.5"
