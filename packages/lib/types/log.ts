@@ -1,7 +1,13 @@
-export type LogLevel = "info" | "warning" | "error";
+export enum LogLevels {
+    info = "Info",
+    warning = "Warning",
+    error = "Error",
+}
+
+export type LogLevel = keyof typeof LogLevels;
 
 export interface Log {
-    namespaceId: "admin" | "logger" | "travel-app";
+    namespaceId: string;
     message: string;
     level: LogLevel;
     stack?: string;

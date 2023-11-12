@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@honzachalupa/admin": "^1.2.1",
-        "@honzachalupa/design-system": "^2.0.5",
+        "@honzachalupa/design-system": "^2.0.7",
         "@vercel/analytics": "^1.0.1",
         "admin": "*",
         "next": "^13.4.2",

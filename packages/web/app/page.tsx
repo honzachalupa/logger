@@ -1,11 +1,5 @@
-import { LogsList } from "../components/LogsList";
+import { IndexPage } from "../pages/Index";
 
 export default async function Index() {
-    return (
-        <>
-            <h1>@honzachalupa/logger</h1>
-
-            <LogsList />
-        </>
-    );
+    return <IndexPage />;
 }
