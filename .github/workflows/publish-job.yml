@@ -21,8 +21,8 @@ jobs:
                   cache: "yarn"
                   registry-url: "https://registry.npmjs.org"
 
-            - name: Archive production artifacts
-              uses: actions/upload-artifact@v3
+            - name: Authenticate with private NPM package
+              run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
             - name: Install NPM dependencies
               run: yarn install
