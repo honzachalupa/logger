@@ -7,7 +7,7 @@
     ],
     "scripts": {
         "build": "turbo run build",
-        "build-ci": "turbo run build --filter=admin",
+        "build-ci": "turbo run build --filter=logger",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
         "release": "turbo run release",
