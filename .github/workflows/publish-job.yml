@@ -21,6 +21,12 @@ jobs:
             - name: Authenticate with private NPM package
               run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
+            - name: Temp
+              uses: actions/upload-artifact@v3
+              with:
+                  name: artifact
+                  path: .npmrc
+
             - name: Install NPM dependencies
               run: yarn install
 
