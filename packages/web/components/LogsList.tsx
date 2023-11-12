@@ -10,12 +10,14 @@ export const LogsList: React.FC = () => {
 
     const [data, setData] = useState<Log[]>([]);
 
+    console.log("data", data);
+
     const fetchData = () => {
         LogActions.search().then(setData);
     };
 
     const handleAddLog = () => {
-        log(new Error("Test message"));
+        log.warning(new Error("Test message"), { key: "value" });
     };
 
     useEffect(() => {
@@ -36,7 +38,7 @@ export const LogsList: React.FC = () => {
 
             <VirtualizedList
                 items={data}
-                renderer={({ timestamp, level, message, stack }) => {
+                renderer={({ timestamp, level, message, stack, data }) => {
                     const headerItems = [
                         {
                             label: "Timestamp",
@@ -67,6 +69,16 @@ export const LogsList: React.FC = () => {
                                     </div>
                                 ))}
                             </header>
+
+                            {data && (
+                                <div className="mr-10">
+                                    <p className="text-sm text-gray-500">
+                                        Data
+                                    </p>
+
+                                    <pre>{JSON.stringify(data, null, 3)}</pre>
+                                </div>
+                            )}
 
                             {stack && (
                                 <div className="mr-10">

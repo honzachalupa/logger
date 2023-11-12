@@ -1,6 +1,6 @@
 import { useLocation } from "@honzachalupa/design-system";
 import { LogActions } from "../actions";
-import { LogLevel } from "../types";
+import { Log, LogLevel } from "../types";
 
 export const useLogger = () => {
     const location = useLocation();
@@ -9,11 +9,15 @@ export const useLogger = () => {
     const isDebugEnabled = searchParams.get("debug");
     const isDebugAlertEnabled = searchParams.get("debugAlert");
 
-    const log = (error: Error | string, level: LogLevel = "info") => {
+    const log = (
+        error: Error | string,
+        data: Log["data"],
+        level: LogLevel = "info"
+    ) => {
         const payload =
             typeof error === "string"
-                ? { message: error, level }
-                : { message: error.message, level, stack: error.stack };
+                ? { message: error, level, data }
+                : { message: error.message, level, stack: error.stack, data };
 
         const isConsoleLogEnabled =
             process.env.NODE_ENV === "development" || isDebugEnabled;
@@ -41,5 +45,18 @@ export const useLogger = () => {
         LogActions.add(payload);
     };
 
-    return log;
+    const logInfo = (message: string, data: Log["data"]) =>
+        log(message, data, "info");
+
+    const logWarning = (message: Error | string, data: Log["data"]) =>
+        log(message, data, "warning");
+
+    const logError = (message: Error | string, data: Log["data"]) =>
+        log(message, data, "error");
+
+    return {
+        info: logInfo,
+        warning: logWarning,
+        error: logError,
+    };
 };
