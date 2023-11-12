@@ -4,27 +4,25 @@ import { useEffect, useState } from "react";
 import config from "../../../config";
 
 export interface Filter {
-    levels: LogLevel[];
-    namespaces: string[];
+    level: LogLevel[];
+    appId: string[];
 }
 
 export const LogsListFilter: React.FC<{
     onChange: (filter: Filter) => void;
 }> = ({ onChange }) => {
-    const [levelsFilter, setLevelsFilter] = useState<Filter["levels"]>([]);
-    const [namespacesFilter, setNamespacesFilter] = useState<
-        Filter["namespaces"]
-    >([]);
+    const [levelFilter, setLevelsFilter] = useState<Filter["level"]>([]);
+    const [appIdFilter, setAppIdFilter] = useState<Filter["appId"]>([]);
 
     const levelOptions = Object.entries(LogLevels).map(([value, label]) => ({
         value,
         label,
     }));
 
-    const namespacesOptions = [
+    const appIdOptions = [
         {
-            value: config.namespaceId,
-            label: config.namespaceId,
+            value: config.appId,
+            label: config.appId,
         },
         {
             value: "admin",
@@ -38,10 +36,10 @@ export const LogsListFilter: React.FC<{
 
     useEffect(() => {
         onChange({
-            levels: levelsFilter,
-            namespaces: namespacesFilter,
+            level: levelFilter,
+            appId: appIdFilter,
         });
-    }, [levelsFilter, namespacesFilter]);
+    }, [levelFilter, appIdFilter]);
 
     const inputClassName = "md:mr-5 basis-full md:basis-1/3";
 
@@ -58,12 +56,12 @@ export const LogsListFilter: React.FC<{
             />
 
             <Select<string[]>
-                placeholder="Filter by namespace ID"
-                options={namespacesOptions}
+                placeholder="Filter by App ID"
+                options={appIdOptions}
                 className={inputClassName}
                 isMulti
                 // @ts-ignore
-                onChange={setNamespacesFilter}
+                onChange={setAppIdFilter}
             />
         </div>
     );

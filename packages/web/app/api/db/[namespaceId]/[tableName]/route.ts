@@ -8,7 +8,7 @@ import {
 } from "../../../../../utils/api";
 
 interface IParams {
-    namespaceId: TAppNamespace;
+    appId: TAppNamespace;
     tableName: string;
 }
 
@@ -23,7 +23,7 @@ interface IParams {
 
     checkOrigin(request);
 
-    const db = await Database(params.namespaceId, params.tableName);
+    const db = await Database(params.appId, params.tableName);
 
     callback({ requestData, db });
 }; */
@@ -43,7 +43,7 @@ export async function GET(request: Request, requestParams: TRequestProps) {
     const searchParams: { id?: string; returnFirst?: boolean } =
         requestData.searchParams;
 
-    const db = await Database(params.namespaceId, params.tableName);
+    const db = await Database(params.appId, params.tableName);
     const dbSearch = searchParams.returnFirst ? "searchSingle" : "search";
 
     const { data, error } = await db[dbSearch](searchParams.id!);
@@ -85,10 +85,7 @@ export async function POST(request: Request, requestParams: TRequestProps) {
 
     const id = uuid();
 
-    const { error } = await Database(
-        params.namespaceId,
-        params.tableName
-    ).create({
+    const { error } = await Database(params.appId, params.tableName).create({
         id,
         ...data.body,
     });
@@ -107,10 +104,10 @@ export async function PATCH(request: Request, requestParams: TRequestProps) {
         id: string;
     } = data.searchParams;
 
-    const { error } = await Database(
-        params.namespaceId,
-        params.tableName
-    ).update(searchParams.id, data.body);
+    const { error } = await Database(params.appId, params.tableName).update(
+        searchParams.id,
+        data.body
+    );
 
     return resolveResponse({ id: searchParams.id }, error);
 }
@@ -126,10 +123,9 @@ export async function DELETE(request: Request, requestParams: TRequestProps) {
         id: string;
     } = data.searchParams;
 
-    const { error } = await Database(
-        params.namespaceId,
-        params.tableName
-    ).delete(searchParams.id);
+    const { error } = await Database(params.appId, params.tableName).delete(
+        searchParams.id
+    );
 
     return resolveResponse({ id: searchParams.id }, error);
 }

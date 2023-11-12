@@ -14,10 +14,8 @@ export const Providers: React.FC<IProps> = ({ children }) => {
     return (
         <>
             <DesignSystemContextProvider>
-                {/* TODO: Add namespace ID to admin package. */}
-                <AuthContextProvider
-                    namespaceId={config.namespaceId as "admin"}
-                >
+                {/* TODO: Add App ID to admin package. */}
+                <AuthContextProvider namespaceId={config.appId as "admin"}>
                     {children}
                 </AuthContextProvider>
             </DesignSystemContextProvider>

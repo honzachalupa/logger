@@ -13,11 +13,9 @@ export const LogsList: React.FC = () => {
     const filteredItems = useMemo(
         () =>
             items.filter(
-                ({ level, namespaceId }) =>
-                    (!filter?.levels.length ||
-                        filter?.levels.includes(level)) &&
-                    (!filter?.namespaces.length ||
-                        filter?.namespaces.includes(namespaceId))
+                ({ level, appId }) =>
+                    (!filter?.level.length || filter?.level.includes(level)) &&
+                    (!filter?.appId.length || filter?.appId.includes(appId))
             ),
         [items, filter]
     );

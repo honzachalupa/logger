@@ -7,7 +7,7 @@ export enum LogLevels {
 export type LogLevel = keyof typeof LogLevels;
 
 export interface Log {
-    namespaceId: string;
+    appId: string;
     message: string;
     level: LogLevel;
     stack?: string;

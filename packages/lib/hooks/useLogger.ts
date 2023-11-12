@@ -2,7 +2,7 @@ import { useLocation } from "@honzachalupa/design-system";
 import { LogActions } from "../actions";
 import { Log } from "../types";
 
-export const useLogger = (namespaceId: Log["namespaceId"]) => {
+export const useLogger = (appId: Log["appId"]) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location?.search);
 
@@ -16,9 +16,9 @@ export const useLogger = (namespaceId: Log["namespaceId"]) => {
     ) => {
         const payload =
             typeof error === "string"
-                ? { namespaceId, message: error, level, data }
+                ? { appId, message: error, level, data }
                 : {
-                      namespaceId,
+                      appId,
                       message: error.message,
                       level,
                       stack: error.stack,

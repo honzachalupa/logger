@@ -1,15 +1,15 @@
-import { LogLevel, LogLevels } from "@honzachalupa/logger/build";
+import { LogLevel, LogLevels } from "@honzachalupa/logger";
 import cx from "classnames";
 import moment from "moment";
 
 export const LogsListItem: React.FC<{
-    namespaceId: string;
+    appId: string;
     level: LogLevel;
     message: string;
     stack?: string;
     data?: any;
     timestamp: string;
-}> = ({ namespaceId, level, message, stack, data, timestamp }) => {
+}> = ({ appId, level, message, stack, data, timestamp }) => {
     const headerItems = [
         {
             label: "Timestamp",
@@ -21,7 +21,7 @@ export const LogsListItem: React.FC<{
         },
         {
             label: "App ID",
-            value: namespaceId,
+            value: appId,
         },
         {
             label: "Message",
