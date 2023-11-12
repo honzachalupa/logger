@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/honzachalupa/logger/compare/v1.1.7...v1.1.8) (2023-11-12)
+
+
+### Bug Fixes
+
+* Publishing fixed. ([d18bd0e](https://github.com/honzachalupa/logger/commit/d18bd0efb8b541c682aa23bcd36211e85a77ac42))
+
 ### [1.1.7](https://github.com/honzachalupa/logger/compare/v1.1.6...v1.1.7) (2023-11-12)
 
 ### [1.1.6](https://github.com/honzachalupa/logger/compare/v1.1.5...v1.1.6) (2023-11-12)
