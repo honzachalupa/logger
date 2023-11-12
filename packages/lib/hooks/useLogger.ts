@@ -1,8 +1,8 @@
 import { useLocation } from "@honzachalupa/design-system";
 import { LogActions } from "../actions";
-import { Log, LogLevel } from "../types";
+import { Log } from "../types";
 
-export const useLogger = () => {
+export const useLogger = (namespaceId: Log["namespaceId"]) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location?.search);
 
@@ -12,12 +12,18 @@ export const useLogger = () => {
     const log = (
         error: Error | string,
         data: Log["data"],
-        level: LogLevel = "info"
+        level: Log["level"] = "info"
     ) => {
         const payload =
             typeof error === "string"
-                ? { message: error, level, data }
-                : { message: error.message, level, stack: error.stack, data };
+                ? { namespaceId, message: error, level, data }
+                : {
+                      namespaceId,
+                      message: error.message,
+                      level,
+                      stack: error.stack,
+                      data,
+                  };
 
         const isConsoleLogEnabled =
             process.env.NODE_ENV === "development" || isDebugEnabled;
@@ -45,18 +51,14 @@ export const useLogger = () => {
         LogActions.add(payload);
     };
 
-    const logInfo = (message: string, data: Log["data"]) =>
-        log(message, data, "info");
-
-    const logWarning = (message: Error | string, data: Log["data"]) =>
-        log(message, data, "warning");
-
-    const logError = (message: Error | string, data: Log["data"]) =>
-        log(message, data, "error");
-
     return {
-        info: logInfo,
-        warning: logWarning,
-        error: logError,
+        info: (...props: [Error | string, Log["data"]]) =>
+            log(...props, "info"),
+
+        warning: (...props: [Error | string, Log["data"]]) =>
+            log(...props, "warning"),
+
+        error: (...props: [Error | string, Log["data"]]) =>
+            log(...props, "error"),
     };
 };

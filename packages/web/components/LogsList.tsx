@@ -6,11 +6,9 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 
 export const LogsList: React.FC = () => {
-    const log = useLogger();
+    const log = useLogger("logger");
 
     const [data, setData] = useState<Log[]>([]);
-
-    console.log("data", data);
 
     const fetchData = () => {
         LogActions.search().then(setData);
@@ -38,7 +36,14 @@ export const LogsList: React.FC = () => {
 
             <VirtualizedList
                 items={data}
-                renderer={({ timestamp, level, message, stack, data }) => {
+                renderer={({
+                    namespaceId,
+                    level,
+                    message,
+                    stack,
+                    data,
+                    timestamp,
+                }) => {
                     const headerItems = [
                         {
                             label: "Timestamp",
@@ -49,6 +54,10 @@ export const LogsList: React.FC = () => {
                         {
                             label: "Level",
                             value: level.toUpperCase(),
+                        },
+                        {
+                            label: "App ID",
+                            value: namespaceId,
                         },
                         {
                             label: "Message",
